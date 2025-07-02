@@ -1,3 +1,26 @@
+# nimodeyv
+
+# Pour lancer odoo
+
+conda activate odoo
+python odoo-bin -r odoo -w odoo --addons-path addons,odoo/custom_addons -d PostgreSQL_17
+
+Pour créer un module perso:
+
+- Créer un répertoire par exemple custom_addons et l'ajouter dans le fichier de config ou dans le lancement de Odoo
+  (cf. ci dessus custom_addons dans la ligne de commande)
+- Créer un répertoire spécifique dans custom_addons qui contiendra le module spécifique (ici TriBois)
+- créer **init**.py et **manifest**.py dans ce répertoire, ici TriBois
+- créer les répertoires model, static, views et security dans le répertoire, ici TriBois
+- insérer **init**.py dans chaque sous-répertoire et créer models.py, déclarer la nouvelle classe inhéritant de la classe model.model
+- créer une vue spécifique dans le répertoire views
+
+Pour visualiser dans odoo les nouveaux modules
+
+- Dans le rectangle à gauche "damier", cliquer sur "Activate the developper moode"
+- Cliquer sur la petite roue crantée dans le bandeau violet et cliquer sur "Devenez un superutilisateur"
+- Le module Tribois devrait désormais apparaitre dans le rectangle à gauche "damier"
+
 # Odoo
 
 [![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)

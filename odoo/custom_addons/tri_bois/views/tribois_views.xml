@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tri_bois_tree_view" model="ir.ui.view">
+        <field name="name">tri.bois.list</field>
+        <field name="model">tri.bois</field>
+        <field name="arch" type="xml">
+            <list string="TriBois">
+                <field name="NumLot"/>
+                <field name="Section"/>
+                <field name="Fournisseur"/>
+                <field name="name3"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="tri_bois_form_view" model="ir.ui.view">
+        <field name="name">tri.bois.form</field>
+        <field name="model">tri.bois</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="NumLot"/>
+                        <field name="Section"/>
+                        <field name="Fournisseur"/>
+                        <field name="name3"/>
+                        <field name="name4"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tribois_action" model="ir.actions.act_window">
+        <field name="name">TriBois</field>
+        <field name="res_model">tri.bois</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="tribois_root_menu" name="TriBois" action="tribois_action"/>
+</odoo>
